@@ -1,28 +1,38 @@
 import React from 'react';
 import './works.css';
-import Portfolio1 from '../../../assets/portfolio-1.png';
-import Portfolio2 from '../../../assets/portfolio-2.png';
-import Portfolio3 from '../../../assets/portfolio-3.png';
-import Portfolio4 from '../../../assets/portfolio-4.png';
-import Portfolio5 from '../../../assets/portfolio-5.png';
-import Portfolio6 from '../../../assets/portfolio-6.png';
 
-const works = () => {
+const projects = [
+  {
+    title: "University Management Portal",
+    tech: "ReactJS, Redux.js, HTML5, CSS3, JavaScript, RESTful APIs",
+    description: "A streamlined web platform for academic collaboration, integrating API endpoints and implementing user authentication.",
+    link: "#",
+  },
+ 
+  {
+    title: "AI Chatbot",
+    tech: "ReactJS, OpenAI API, Axios",
+    description: "An AI-powered chatbot built with ReactJS that enables real-time conversations using OpenAI's GPT-4 API. The chatbot provides intelligent responses, maintains context, and offers a user-friendly chat interface with a typing indicator",
+    link: "#",
+  },
+];
+
+const Works = () => {
   return (
-    <section id='works'>
-        <h2 className='workstitle'>My Portfolio</h2>
-        <span className='worksDesc'>Write about the description</span>
-        <div className='worksImgs'>
-            <img src={Portfolio1} alt="" className='worksImg' />
-            <img src={Portfolio2}  alt="" className='worksImg' />
-            <img src={Portfolio3}  alt="" className='worksImg' />
-            <img src={Portfolio4}  alt="" className='worksImg' />
-            <img src={Portfolio5} alt="" className='worksImg' />
-            <img src={Portfolio6}  alt="" className='worksImg' />
-        </div>
-        <button className='workBtn'>See More</button>
+    <section id="works">
+      <h2 className="worksTitle">My Projects</h2>
+      <div className="worksContainer">
+        {projects.map((project, index) => (
+          <div key={index} className="worksCard">
+            <h3 className="worksCardTitle">{project.title}</h3>
+            <span className="worksTech">{project.tech}</span>
+            <p className="worksCardDesc">{project.description}</p>
+            
+          </div>
+        ))}
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export default works
+export default Works;

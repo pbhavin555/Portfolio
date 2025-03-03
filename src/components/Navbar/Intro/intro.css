@@ -1,81 +1,165 @@
-#intro{
+/* Intro Section */
+#intro {
     height: calc(100vh - 4rem);
     width: 100vw;
     max-width: 75rem;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
-
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1rem;
 }
 
-.bg{
-    position: absolute;
-    z-index: -1;
-    top: -4rem;
-    right: 0;
+/* Container for Image & Name */
+.introHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Profile Image */
+.bg {
     object-fit: cover;
-    height: 100vh;
-    
+    height: 50vh;
+    width: 50vh; 
+    border-radius: 50%; 
+    border: 5px solid yellow; 
+    transition: transform 0.5s ease-in-out;
 }
-.introContent{
-    height: 100vh;
-    width: 100vw;
+
+.bg:hover {
+    transform: scale(1.05);
+}
+
+/* Text Content */
+.introContent {
+    width: 50%;
     padding: 2rem;
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: 700;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
 }
 
-.hello{
-    font-size: 1.75rem;
+/* Greeting */
+.hello {
+    font-size: 1.5rem;
     font-weight: 100;
-
+    color: white;
+    opacity: 0.8;
 }
-.introName{
+
+/* Name Styling */
+.introName {
     color: yellow;
-
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 2.8rem;
 }
-.introPara{
+
+/* Name Click Animation */
+.introName:active {
+    animation: popEffect 0.3s ease-in-out;
+}
+
+@keyframes popEffect {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Description */
+.introPara {
     font-size: medium;
     font-weight: 300;
     letter-spacing: 1px;
+    color: #ccc;
 }
-.btn{
+
+/* Buttons */
+.buttonContainer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn {
     background: white;
-    margin: 1rem 0;
-    padding: 0.75rem 1.5rem;
-    border-radius:2rem ;
+    padding: 0.75rem 1.2rem;
+    border-radius: 2rem;
     border: none;
-
-}
-.btnImg{
-    object-fit: cover;
-    margin: 0 0.25rem;
-    height: 1rem;
-}
-@media screen and (max-width:840px){
-    .bg{
-        right: -10vw;
-    }
-    .introContent{
-        font-size: 10vw;
-    }
-    .hello{
-        font-size: 4.5vw;
-    }
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
 }
 
-@media screen and (max-width:480px){
-    .bg{
-        right: -20vw;
+.downloadBtn {
+    background: yellow;
+}
+
+.btn:hover {
+    background: #ffcc00;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 898px) {
+    #intro {
+        flex-direction: column;
+        text-align: center;
     }
-    .introContent{
-        font-size: 10vw;
+
+    /* Move Image Beside Name */
+    .introHeader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 0.5rem;
+        text-align: left;
     }
-    .hello{
-        font-size: 4.5vw;
+
+    /* Reduce Image Size */
+    .bg {
+        height: 10vh;
+        width: 10vh;
+        border: 3px solid yellow;
+    }
+
+    .introName {
+        font-size: 1.5rem;
+    }
+
+    .introContent {
+        width: 90%;
+        font-size: 2rem;
+        padding: 1rem;
+    }
+
+    .buttonContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .introContent {
+        font-size: 1.8rem;
+    }
+
+    .bg {
+        height: 8vh;
+        width: 8vh;
+        justify-content: left;
+    }
+
+    .introName {
+        font-size: 1.8rem;
     }
 }

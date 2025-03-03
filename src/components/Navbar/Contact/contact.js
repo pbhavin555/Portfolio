@@ -1,69 +1,70 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import './contact.css';
 import emailjs from '@emailjs/browser';
-import Walmart from '../../../assets/walmart.png';
-import Adobe from '../../../assets/adobe.png';
-import Microsoft from '../../../assets/microsoft.png';
-import Facebook from '../../../assets/facebook.png';
-import FacebookIcon from '../../../assets/facebook-icon.png'
-import TwitterIcon from '../../../assets/twitter.png'
-import YoutubeIcon from '../../../assets/youtube.png'
-import InstagramIcon from '../../../assets/instagram.png'
+import LinkedInIcon from '../../../assets/linkedInicon.png';
+import GithubIcon from '../../../assets/githublogo.png';
+
+
+
 
 const Contact = () => {
-    const form = useRef();
+  const form = useRef();
+  const [notification, setNotification] = useState({ message: '', type: '' });
 
-    const sendEmail = (e) => {
-        e.preventDefault();
-    
-        emailjs
-          .sendForm('service_2mmnlmm', 'template_0w9cmbc', form.current, {
-            publicKey: 'HvswLcYps3xdzSDa7',
-          })
-          .then(
-            () => {
-              console.log('SUCCESS!');
-              e.target.reset();
-              alert('Email Sent Successfully');
-            },
-            (error) => {
-              console.log('FAILED...', error.text);
-            },
-          );
-      };
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form.current);
+    if (!formData.get("your_name") || !formData.get("your_email") || !formData.get("message")) {
+      setNotification({ message: "Please fill out all fields before submitting.", type: "error" });
+      return;
+    }
+
+    emailjs
+      .sendForm('service_2mmnlmm', 'template_0w9cmbc', form.current, {
+        publicKey: 'HvswLcYps3xdzSDa7',
+      })
+      .then(
+        () => {
+          setNotification({ message: "Thank you for reaching out! Your message has been sent successfully.", type: "success" });
+          e.target.reset();
+        },
+        (error) => {
+          setNotification({ message: "Failed to send message. Please try again.", type: "error" });
+        }
+      );
+  };
+
   return (
     <section id='contactPage'>
+      
+      {/* Contact Section */}
+      <div id="contact">
+        <h1 className='contactPageTitle'>Contact Me</h1>
+        <span className='contactDesc'>Please fill out the form below to discuss any work opportunities.</span>
 
-        <div id='clients'>
-            <h1 className='contactPageTitle'>My Clients</h1>
-            <p className='clientDesc'>Write about the client description</p>
-        </div>
-        <div className='clientImgs'>
-            <img src={Walmart} alt="" className='clientImg'></img>
-            <img src={Adobe} alt="" className='clientImg'></img>
-            <img src={Microsoft} alt="" className='clientImg'></img>
-            <img src={Facebook}alt="" className='clientImg'></img>
-        </div>
+        {notification.message && (
+          <div className={`notification ${notification.type}`}>{notification.message}</div>
+        )}
 
-        <div id="contact">
+        <form className='contactForm' ref={form} onSubmit={sendEmail}>
+          <input type='text' className="name" placeholder='Your Name' name='your_name' />
+          <input type='email' className="email" placeholder='Your Email' name='your_email' />
+          <textarea className='msg' name='message' rows="5" placeholder='Your Message' ></textarea>
+          <button type='submit' value='Send' className='submitBtn'>Submit</button>
 
-            <h1 className='contactPageTitle'>Contact Me</h1>
-            <span className='contactDesc'>Please Fill out the form below to discuss any work opportunites.</span>
-            <form className='contactForm' ref={form} onSubmit={sendEmail}>
-                <input type='text' className="name" placeholder='Your Name' name='your_name'/>
-                <input type='email' className="email" placeholder='Your Email' name='your_email'/>
-                <textarea className='msg' name='message' rows="5" placeholder='Your Message' ></textarea>
-                <button type='submit' value='Send' className='submitBtn'>Submit</button>
-                <div className='links'>
-                    <img src={FacebookIcon} alt='Facebook' className='link'/>
-                    <img src={TwitterIcon}alt='Twitter' className='link'/>
-                    <img src={YoutubeIcon} alt='Youtube' className='link'/>
-                    <img src={InstagramIcon}alt='Instagram' className='link'/>
-                </div>
-            </form>
-        </div>
+          <div className='links'>
+            <a href='https://www.linkedin.com/in/bhavinpatel1205/' target='_blank' rel='noopener noreferrer'>
+              <img src={LinkedInIcon} alt='LinkedIn' className='link' />
+            </a>
+            <a href='https://github.com/pbhavin555' target='_blank' rel='noopener noreferrer'>
+              <img src={GithubIcon} alt='Github' className='link' />
+            </a>
+          </div>
+        </form>
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

@@ -1,4 +1,4 @@
-#contactPage{
+#contactPage {
     min-height: calc(100vh - 4rem);
     width: 100vw;
     max-width: 60rem;
@@ -8,40 +8,65 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-.contactPageTitle{
-    font-size: 3rem;
+
+.contactPageTitle {
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    margin-top: 30px;
+    transition: color 0.3s ease-in-out;
 }
-.clientDesc{
+
+
+
+.clientDesc {
     font-weight: 300;
     font-size: 1rem;
 }
 
-.clientImgs{
+.clientImgs {
     margin: 1rem 0;
     display: flex;
     flex-wrap: wrap;
 }
-.clientImg{
+
+.clientImg {
     object-fit: cover;
     width: 23%;
     min-width: 9rem;
     margin: auto;
     padding: 0.25rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-#clients{
+.clientImg:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#clients {
     padding: 2rem;
 }
-.contactDesc{
+
+.contactDesc {
     padding: 1rem;
     font-size: medium;
     font-weight: 300;
 }
 
-.contactForm{
+.contactForm {
     margin: 1rem;
     display: flex;
     flex-direction: column;
@@ -50,6 +75,7 @@
     width: 90vw;
     max-width: 60rem;
 }
+
 .name, .email, .msg {
     font-size: medium;
     width: 100%;
@@ -60,23 +86,46 @@
     border: none;
     border-radius: 0.5rem;
     background: rgb(40, 40, 40);
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-.submitBtn{
+.name:focus, .email:focus, .msg:focus {
+    background: rgb(60, 60, 60);
+    transform: scale(1.02);
+}
+
+.submitBtn {
     background: white;
     border-radius: 0.5rem;
     border: none;
     margin: 2rem;
     padding: 0.75rem 3.5rem;
-
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
-.links{
+
+.submitBtn:hover {
+
+    transform: scale(1.05);
+}
+
+.links {
     display: flex;
     flex-wrap: wrap;
 }
-.link{
+
+.link {
     object-fit: cover;
-    height: 3rem;
-    width: 3rem;
+    height: 2rem;
+    width: 2rem;
     margin: 0 0.75rem;
+    border-radius: 40%;
+    margin-top: 1rem;
+    margin-bottom: 1.4rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.link:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

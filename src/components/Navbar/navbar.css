@@ -1,5 +1,5 @@
-.navbar{
-    background: rgb(30,30,30);
+.navbar {
+    background: rgb(30, 30, 30);
     height: 5rem;
     width: 100vw;
     max-width: 75rem;
@@ -10,85 +10,125 @@
     justify-content: space-between;
     position: sticky;
     top: 0;
-    z-index: 3;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
     object-fit: cover;
     height: 3rem;
-    width: 4rem;
+    width: 6rem;
+    border-radius: 3rem;
+    transition: transform 0.3s ease-in-out;
 }
 
-.desktopMenuListItem{
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.desktopMenuListItem {
     margin: 1rem;
     cursor: pointer;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out, transform 0.2s;
 }
 
-.desktopMenuListItem:hover{
+.desktopMenuListItem:hover {
     color: yellow;
+    transform: translateY(-3px);
     padding-bottom: 0.5rem;
-    border-bottom: 3px solid yellow ;
+    border-bottom: 3px solid yellow;
 }
 
-.desktopMenuBtn{
+.desktopMenuBtn {
     background: white;
     color: black;
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 1rem;
+    padding: 0.5rem 1.5rem;
     border-radius: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
-.desktopMenuImg{
+
+.desktopMenuImg {
     object-fit: cover;
     height: 1rem;
     width: 1rem;
-    margin: 1rem;
+    margin-right: 0.5rem;
 }
 
-.active{
+.active {
     color: yellow;
     padding-bottom: 0.5rem;
     border-bottom: 3px solid yellow;
 }
-.mobMenu{
+
+.mobMenu {
     display: none;
     object-fit: cover;
     height: 1.8rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
 
-.navMenu{
+.mobMenu:hover {
+    transform: rotate(90deg);
+}
+
+.navMenu {
     position: absolute;
-    top: 4rem;
+    top: 5rem;
     right: 2rem;
-    z-index: 2;
+    z-index: 999;
     display: flex;
     flex-direction: column;
     padding: 0.5rem;
-    height: fit-content;
     min-width: 15rem;
-    background: rgb(40,40,40);
+    background: rgb(40, 40, 40);
     border-radius: 1rem;
-
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease-in-out;
 }
-.listItem{
+
+.navMenu.show {
+    transform: scaleY(1);
+}
+
+.listItem {
     color: white;
-    padding: 0.5rem 3rem;
+    padding: 0.8rem 2rem;
     margin: 0.25rem;
-    background: rgb(30,30,30);
-
+    background: rgb(30, 30, 30);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease-in-out, transform 0.2s;
 }
-@media screen and (max-width:720px) {
-    .mobMenu{
-        display: flex;
 
+.listItem:hover {
+    background: yellow;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 720px) {
+    .mobMenu {
+        display: flex;
     }
-    .desktopMenu{
+
+    .desktopMenu {
         display: none;
     }
-    .desktopMenuBtn{
+
+    .desktopMenuBtn {
         display: none;
     }
-    
 }

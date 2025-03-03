@@ -1,29 +1,41 @@
-import React from 'react'
+import React from 'react';
 import './intro.css';
-import bg from '../../../assets/image.png'
-import {Link} from 'react-scroll'
-import btnImg from '../../../assets/hireme.png';
+import bg from '../../../assets/bhavinimage.jpeg';
+import { Link } from 'react-scroll';
+import resume from '../../../assets/bhavinResume.pdf';
+import { motion } from 'framer-motion';
 
-
-const intro = () => {
+const Intro = () => {
   return (
-  <section id="intro">
-    <div className="introContent">
-
-    <span className='hello'>Hello</span>
-    <span className='introText'>I'm <span className='introName'>Bhavin</span><br />Website Developer</span>
-    <p className='introPara'>I am a skilled Web Designer with experience in creating <br/> visually appealing and user-friendly websites</p>
-    <Link><button className='btn'><img src={btnImg} alt="Hire" className='btnImg'/>Hire Me</button></Link>
-    
-
-    </div>
-    <img src={bg} alt="" className="bg"/>
-    
-
-  </section>
-
-
-  )
+    <section id="intro">
+      <div className="introContent">
+        <motion.span className='hello' initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+          Hello
+        </motion.span>
+        
+        <motion.span className='introText' initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 }}>
+          I'm <span className='introName'>Bhavin Patel</span><br />FrontEnd Developer
+        </motion.span>
+        
+        <motion.p className='introPara' initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }}>
+          I am a skilled Web Developer, specializing in building scalable 
+          and interactive web experiences with <b>ReactJS</b>,<br/> ensuring visually appealing and user-friendly designs.
+        </motion.p>
+        
+        <div className="buttonContainer">
+          <Link to="works" smooth={true} duration={500} offset={-100}>
+            <motion.button className='btn' whileHover={{ scale: 1.1 }}  whileTap={{ scale: 0.9 }}>View My Work</motion.button>
+          </Link>
+          
+          <a href={resume} download="bhavinResume.pdf">
+            <motion.button className='btn downloadBtn' whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Download Resume</motion.button>
+          </a>
+        </div>
+      </div>
+      
+      <motion.img src={bg} alt="Bhavin Patel" className="bg" initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1 }} />
+    </section>
+  );
 }
 
-export default intro
+export default Intro;

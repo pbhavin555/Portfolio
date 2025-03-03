@@ -1,54 +1,98 @@
-#works{
-    min-height: calc(100vh - 4rem);
-    width: 100vw;
-    max-width: 60rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
+#works {
     text-align: center;
-    padding: 0 1rem;
+    padding: 60px 0;
+    background-color: #0f0f0f; /* Slightly darker background for depth */
 }
 
-.workstitle{
-    margin: 1rem 0;
-    font-size: 3rem;
-
-}
-.worksDesc{
-    font-weight: 300;
-    font-size: 1rem;
-    max-width: 45rem;
-
-}
-.worksImgs{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    flex-wrap: wrap;
-    max-width: 65rem;
-
-}
-.worksImg{
-    object-fit: cover;
-    height: 20rem;
-    margin: 0.5rem;
-
-}
-.workBtn{
-    padding: 0.5rem 2.5rem;
-    border: none;
-    border-radius: 2rem;
-    font-size: 1rem;
-    background: white;
-    margin: 3rem 0;
+.worksTitle {
+    font-size: 2.5rem; /* Slightly larger title */
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #fff;
+    text-transform: uppercase; /* Added for emphasis */
+    letter-spacing: 1.5px;
 }
 
-@media screen and (max-width:585px) {
-    .worksImg{
-        height: 48px;
+.worksContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adjusted for better responsiveness */
+    gap: 25px; /* Increased spacing */
+    padding: 30px;
+    margin: 0 auto; /* Centering container */
+    max-width: 80%; /* Added margin from left and right */
+}
+
+.worksCard {
+    background: linear-gradient(135deg, #1e1e1e 30%, #292929 100%); /* Gradient effect for depth */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.1); /* Enhanced glow effect */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for structure */
+}
+
+.worksCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 6px 15px rgba(0, 123, 255, 0.5); /* Increased glow intensity on hover */
+}
+
+.worksCardTitle {
+    font-size: 1.5rem; /* Increased font size */
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #fff;
+    text-transform: capitalize; /* Capitalized title for readability */
+}
+
+.worksTech {
+    font-size: 0.8rem; /* Increased readability */
+    font-weight: 700;
+    color: #00aaff; /* Brighter blue for contrast */
+    display: block;
+    margin-bottom: 12px;
+    text-transform: uppercase; /* Added for emphasis */
+}
+
+.worksCardDesc {
+    font-size: medium; /* Slightly larger for better readability */
+    color: #ccc; /* Softer contrast */
+    margin-bottom: 20px;
+    line-height: 1.5; /* Improved readability */
+}
+
+.worksCardBtn {
+    text-decoration: none;
+    background: linear-gradient(90deg, #007bff, #0056b3); /* Gradient button */
+    color: white;
+    padding: 12px 18px;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 6px rgba(0, 123, 255, 0.3); /* Added shadow effect */
+}
+
+.worksCardBtn:hover {
+    background: linear-gradient(90deg, #0056b3, #003f7f); /* Darker on hover */
+    transform: scale(1.08);
+}
+
+
+@media screen and (max-width: 480px) {
+    .worksTitle {
+        font-size: 2rem;
     }
-    
+
+    .worksCardTitle {
+        font-size: 1.4rem;
+    }
+
+    .worksCardDesc {
+        font-size: 0.9rem;
+    }
+
+    .worksCardBtn {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+    }
 }
