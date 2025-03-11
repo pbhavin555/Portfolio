@@ -77,22 +77,302 @@
     transform: scale(1.08);
 }
 
+@media (min-width: 1024px) {
+  #works {
+    padding: 4rem 2rem;
+  }
+
+  .worksTitle {
+    font-size: 3.2rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+    letter-spacing: 1.5px;
+  }
+
+  .worksContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Ensure two columns for larger screens */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .worksCard {
+    padding: 24px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #1e1e1e 30%, #292929 100%);
+    box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .worksCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 16px rgba(0, 123, 255, 0.5);
+  }
+
+  .worksCardTitle {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+    text-transform: capitalize;
+  }
+
+  .worksTech {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #00aaff;
+    margin-bottom: 8px;
+    display: block;
+    text-transform: uppercase;
+  }
+
+  .worksCardDesc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 16px;
+  }
+
+  .worksCardBtn {
+    font-size: 1rem;
+    padding: 12px 18px;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: white;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 6px rgba(0, 123, 255, 0.3);
+    text-decoration: none;
+  }
+
+  .worksCardBtn:hover {
+    background: linear-gradient(90deg, #0056b3, #003f7f);
+    transform: scale(1.08);
+  }
+}
+
+
+
+@media (max-width: 1024px) {
+  #works {
+    padding: 3rem 2rem;
+  }
+
+  .worksTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .worksContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .worksCard {
+    padding: 20px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #1e1e1e 30%, #292929 100%);
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+  }
+
+  .worksCard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 6px 12px rgba(0, 123, 255, 0.3);
+  }
+
+  .worksCardTitle {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+  }
+
+  .worksTech {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #00aaff;
+    margin-bottom: 8px;
+    display: block;
+    text-transform: uppercase;
+  }
+
+  .worksCardDesc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #ccc;
+    margin-bottom: 15px;
+  }
+
+  .worksCardBtn {
+    font-size: 0.9rem;
+    padding: 10px 14px;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: white;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 6px rgba(0, 123, 255, 0.3);
+    text-decoration: none;
+  }
+
+  .worksCardBtn:hover {
+    background: linear-gradient(90deg, #0056b3, #003f7f);
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 768px) {
+    #works {
+      padding: 3rem 1.5rem;
+    }
+  
+    .worksTitle {
+      font-size: 4vw;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+  
+    .worksContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  
+    .worksCard {
+      width: 100%;
+      padding: 20px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #1e1e1e 30%, #292929 100%);
+      box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+    }
+  
+    .worksCard:hover {
+      transform: scale(1.03);
+    }
+  
+    .worksCardTitle {
+      font-size: 4vw;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #fff;
+      text-transform: capitalize;
+    }
+  
+    .worksTech {
+      font-size: 3.5vw;
+      font-weight: 500;
+      color: #00aaff;
+      margin-bottom: 8px;
+      display: block;
+      text-transform: uppercase;
+    }
+  
+    .worksCardDesc {
+      font-size: 3.5vw;
+      color: #ccc;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+  
+    .worksCardBtn {
+      font-size: 3.5vw;
+      padding: 10px 16px;
+      background: linear-gradient(90deg, #007bff, #0056b3);
+      color: white;
+      border-radius: 6px;
+      display: inline-block;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0px 4px 6px rgba(0, 123, 255, 0.3);
+    }
+  
+    .worksCardBtn:hover {
+      background: linear-gradient(90deg, #0056b3, #003f7f);
+      transform: scale(1.05);
+    }
+  }
+  
 
 @media screen and (max-width: 480px) {
+    #works {
+        text-align: center;
+        padding: 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
     .worksTitle {
-        font-size: 2rem;
+        font-size: 6vw;
+        font-weight: 700;
+        margin-top: 1rem;
+        
+        
+    }
+    .worksContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        max-width: 400px;
+        margin-top: -2rem;
+    }
+    .worksCard {
+        width: 90%;
+        max-width: 320px;
+        padding: 15px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+    }
+    .worksCard:hover {
+        transform: scale(1.05);
+    }
+    .worksCardTitle {
+        font-size: 4.5vw;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 5px;
     }
 
-    .worksCardTitle {
-        font-size: 1.4rem;
+    .worksTech {
+        font-size: 3.8vw;
+        font-weight: 400;
+        display: block;
+        margin-bottom: 5px;
     }
 
     .worksCardDesc {
-        font-size: 0.9rem;
+        font-size: 3.5vw;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        color: white;
     }
 
-    .worksCardBtn {
-        padding: 12px 16px;
-        font-size: 0.9rem;
-    }
+
 }
