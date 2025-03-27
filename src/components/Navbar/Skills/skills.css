@@ -41,7 +41,7 @@
     text-align: center;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     position: relative;
-    cursor: pointer;
+    /* cursor: pointer; */
     opacity: 0;
     transform: scale(0.9);
     animation: fadeIn 0.8s ease-in-out forwards;

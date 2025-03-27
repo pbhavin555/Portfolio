@@ -2,7 +2,7 @@ import React from 'react';
 import './intro.css';
 import bg from '../../../assets/bhavinimage.jpeg';
 import { Link } from 'react-scroll';
-import resume from '../../../assets/bhavinResume.pdf';
+import resume from '../../../assets/Resume (1).pdf';
 import { motion } from 'framer-motion';
 
 const Intro = () => {
@@ -27,7 +27,7 @@ const Intro = () => {
             <motion.button className='btn' whileHover={{ scale: 1.1 }}  whileTap={{ scale: 0.9 }}>View My Work</motion.button>
           </Link>
           
-          <a href={resume} download="bhavinResume.pdf">
+          <a href={resume} download="Resume.pdf">
             <motion.button className='btn downloadBtn' whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Download Resume</motion.button>
           </a>
         </div>

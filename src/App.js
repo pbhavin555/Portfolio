@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+
 import Navbar from './components/Navbar/navbar';
 import Intro from "./components/Navbar/Intro/intro";
 import Skills from './components/Navbar/Skills/skills';
