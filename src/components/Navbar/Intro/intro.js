@@ -1,6 +1,6 @@
 import React from 'react';
 import './intro.css';
-import bg from '../../../assets/bhavinimage.jpeg';
+import bg from '../../../assets/bhavinimage.webp';
 import { Link } from 'react-scroll';
 import resume from '../../../assets/Resume (1).pdf';
 import { motion } from 'framer-motion';

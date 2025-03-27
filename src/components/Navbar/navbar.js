@@ -8,6 +8,10 @@ import menu from '../../assets/menu.png';
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
+  const toggleMenu = () => {
+    setShowMenu(prev => !prev);
+  };
+
   return (
     <nav className='navbar'>
       <img src={logo} alt="logo" className='logo' />
@@ -28,15 +32,20 @@ const Navbar = () => {
       </button>
 
       {/* Mobile Menu Button */}
-      <img src={menu} alt="Menu" className='mobMenu' onClick={() => setShowMenu(!showMenu)} />
+      <img 
+        src={menu} 
+        alt="Menu" 
+        className={`mobMenu ${showMenu ? 'rotate' : ''}`} 
+        onClick={toggleMenu} 
+      />
 
       {/* Mobile Dropdown Menu */}
       <div className={`navMenu ${showMenu ? 'show' : ''}`}>
-        <Link activeClass='active' to="intro" spy={true} smooth={true} offset={-80} duration={500} className="listItem" onClick={() => setShowMenu(false)}>About Me</Link>
-        <Link activeClass='active' to="skills" spy={true} smooth={true} offset={-80} duration={500} className="listItem" onClick={() => setShowMenu(false)}>Skills</Link>
-        <Link activeClass='active' to="works" spy={true} smooth={true} offset={-80} duration={500} className="listItem" onClick={() => setShowMenu(false)}>Projects</Link>
-        <Link activeClass='active' to="internship" spy={true} smooth={true} offset={-80} duration={500} className="listItem" onClick={() => setShowMenu(false)}>Internships</Link>
-        <Link activeClass='active' to="contact" spy={true} smooth={true} offset={-80} duration={500} className="listItem" onClick={() => setShowMenu(false)}>Contact Me</Link>
+        <Link to="intro" spy={true} smooth={true} offset={-80} duration={500} className="listItem" onClick={() => setShowMenu(false)}>About Me</Link>
+        <Link to="skills" spy={true} smooth={true} offset={-80} duration={500} className="listItem" onClick={() => setShowMenu(false)}>Skills</Link>
+        <Link to="works" spy={true} smooth={true} offset={-80} duration={500} className="listItem" onClick={() => setShowMenu(false)}>Projects</Link>
+        <Link to="internship" spy={true} smooth={true} offset={-80} duration={500} className="listItem" onClick={() => setShowMenu(false)}>Internships</Link>
+        <Link to="contact" spy={true} smooth={true} offset={-80} duration={500} className="listItem" onClick={() => setShowMenu(false)}>Contact Me</Link>
       </div>
     </nav>
   );
