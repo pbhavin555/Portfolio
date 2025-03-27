@@ -214,184 +214,133 @@
     font-size: 14px;
     color: #ffffff;
   }
+/* Progress Bar */
+.progressBar {
+  position: absolute;
+  bottom: 12px;
+  left: 10%;
+  width: 80%;
+  height: 14px; /* Default size for larger screens */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 7px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Progress Fill */
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #ffcc00, #ff5733);
+  width: 0%; /* Initially hidden */
+  transition: width 0.6s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff; /* White text for contrast */
+  font-size: 12px;
+  font-weight: bold;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Enhances visibility */
+  min-width: 28px; /* Ensures text is always visible */
+  padding: 0 5px;
+  border-radius: 7px;
+}
+}
+
+
+
+@media (max-width: 768px) {
+  #skills {
+    padding: 3rem 1.5rem;
+  }
+
+  .skillTitle {
+    font-size: 4vw;
+    font-weight: 600;
+    margin-bottom: 1.5rem; /* Increased spacing */
+  }
+
+  .skillDesc {
+    font-size: 3.5vw;
+    max-width: 90%;
+    margin-bottom: 25px; /* More spacing */
+    color: #cccccc;
+    text-align: center;
+  }
+
+  .skillContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Increased gap */
+    padding: 0;
+  }
+
+  .skillBar {
+    width: 130px; /* Slightly increased width */
+    height: 180px; /* Increased height for more spacing */
+    padding: 20px; /* More padding */
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .skillBar:hover {
+    transform: scale(1.05);
+  }
+
+  .skillBarImg {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 15px; /* More space below the image */
+  }
+
+  .skillBarText h2 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 20px; /* More spacing below text */
+  }
 
   .progressBar {
-    position: absolute;
-    bottom: 10px;
-    left: 10%;
-    width: 80%;
-    height: 10px;
+    width: 85%;
+    height: 14px; /* Slightly increased height */
     background: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
+    border-radius: 6px;
     overflow: hidden;
+    margin-top: 30px; /* More spacing above progress bar */
+    position: relative;
   }
 
   .progressFill {
     height: 100%;
     background: linear-gradient(90deg, #ffcc00, #ff5733);
-    transition: width 0.6s ease-in-out;
-    font-size: 10px;
+    font-size: 14px;
     font-weight: bold;
     color: #ffffff;
-  }
-}
-
-
-
-
-  @media (max-width: 768px) {
-    #skills {
-      padding: 3rem 1.5rem;
-    }
-  
-    .skillTitle {
-      font-size: 4vw;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-  
-    .skillDesc {
-      font-size: 3.5vw;
-      max-width: 90%;
-      margin-bottom: 20px;
-      color: #cccccc;
-      text-align: center;
-    }
-  
-    .skillContainer {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      padding: 0;
-    }
-  
-    .skillBar {
-      width: 120px;
-      height: 140px;
-      padding: 15px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.1);
-      box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.2);
-      transition: transform 0.3s ease-in-out;
-      cursor: pointer;
-    }
-  
-    .skillBar:hover {
-      transform: scale(1.05);
-    }
-  
-    .skillBarImg {
-      width: 50px;
-      height: 50px;
-      margin-bottom: 8px;
-    }
-  
-    .skillBarText h2 {
-      font-size: 14px;
-      font-weight: 600;
-      color: #ffffff;
-    }
-  
-    .progressBar {
-      width: 80%;
-      height: 8px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 5px;
-      overflow: hidden;
-      margin-top: 8px;
-    }
-  
-    .progressFill {
-      height: 100%;
-      background: linear-gradient(90deg, #ffcc00, #ff5733);
-      font-size: 10px;
-      color: #ffffff;
-      border-radius: 5px;
-      transition: width 0.5s ease-in-out;
-    }
-  }
-  
-
-
-  
-
-  @media (max-width: 480px) {
-    #skills {
-        text-align: center;
-        padding: 2rem 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-    }
-    .skillTitle {
-      font-size: 6vw;
-      font-weight: 700;
-      margin-top: 1rem;
-      
-  }
-    .skillDesc {
-      font-size: 4vw;
-      font-weight: 300;
-      letter-spacing: 1px;
-      color: #ccc;
-      max-width: 80%;
-  }
-  .skillContainer {
+    text-align: center;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-    gap: 17px;
-    width: 100%;
-    max-width: 400px;
-}
-.skillBar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  height: 120px;
-  padding: 10px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s ease-in-out;
-  cursor: pointer;
-}
-.skillBar:hover {
-  transform: scale(1.05);
-}
-.skillBarImg {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 5px;
-}
-.skillBarText h2 {
-  font-size: 3.8vw;
-  font-weight: 600;
-  color: white;
-}
-.progressBar {
-  width: 80%;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 5px;
-}
-.progressFill {
-  height: 100%;
-  background: yellow;
-  text-align: center;
-  font-size: 3vw;
-  color: black;
-  border-radius: 10px;
-  transition: width 0.5s ease-in-out;
+    justify-content: center;
+    border-radius: 6px;
+    transition: width 0.5s ease-in-out;
+    min-width: 40px; /* Ensures visibility */
+  }
 }
 
+@media (max-width: 480px) {
+  .progressBar {
+    height: 12px; /* Slightly larger for better visibility */
+    border-radius: 12px;
+    margin-top: 35px; /* More space above progress bar */
   }
-  
+
+  .progressFill {
+    font-size: 12px;
+    font-weight: bold;
+    min-width: 45px;
+  }
+}
+
