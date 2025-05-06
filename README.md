@@ -46,5 +46,6 @@ Contributions
 Feel free to fork and contribute to this project if you'd like! I welcome any suggestions or improvements.
 
 Contact
-You can reach me via LinkedIn or email.
+You can reach me via [LinkedIn]((https://www.linkedin.com/in/bhavinpatel1205)) or via [email](mailto:bhavinpatel1205@gmail.com).
+
 
